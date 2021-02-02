@@ -11,6 +11,11 @@ class Company extends Component {
         similarCompanies: [],
     };
 
+    componentDidUpdate() {
+        this.getCurrentCompany();
+        this.getSimilarCompanies();
+    }
+
     componentDidMount() {
         this.getCurrentCompany();
         this.getSimilarCompanies();
@@ -41,7 +46,9 @@ class Company extends Component {
         let { currentCompany, similarCompanies } = this.state;
         return (
             <React.Fragment>
-                <h1>{ticker}</h1>
+                <h1>
+                    {ticker}: {currentCompany.name}
+                </h1>
                 <Container>
                     <Row>
                         <Col>
