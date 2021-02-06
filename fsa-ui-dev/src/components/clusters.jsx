@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React, { Component } from "react";
 
-import { fetchFakeCompanies } from "../services/fakeCompanyService";
+import { fetchCompanies } from "../services/companyService";
 import CompanyTable from "./common/companyTable";
 import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
@@ -19,7 +19,7 @@ class Clusters extends Component {
     }
 
     async getFakeCompanies() {
-        const companies = await fetchFakeCompanies();
+        const companies = await fetchCompanies();
         this.setState({ itemsCount: companies.length, companies: companies });
         this.getSortedData();
     }

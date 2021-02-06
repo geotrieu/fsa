@@ -2,7 +2,7 @@ import _ from "lodash";
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-import { fetchFakeCompanies } from "../services/fakeCompanyService";
+import { fetchCompanies } from "../services/companyService";
 
 import CompanyTable from "./common/companyTable";
 import Pagination from "./common/pagination";
@@ -14,7 +14,7 @@ class Company extends Component {
         similarCompanies: [],
         itemsCount: 0,
         currentPage: 1,
-        pageSize: 5,
+        pageSize: 10,
     };
 
     componentDidUpdate() {
@@ -28,7 +28,7 @@ class Company extends Component {
     }
 
     async getCurrentCompany() {
-        let companies = await fetchFakeCompanies();
+        let companies = await fetchCompanies();
         let currentCompany = companies.find(
             (c) => c.ticker === this.props.match.params.ticker
         );
@@ -36,7 +36,7 @@ class Company extends Component {
     }
 
     async getSimilarCompanies() {
-        let companies = await fetchFakeCompanies();
+        let companies = await fetchCompanies();
         companies = companies.filter(
             (c) => c.cluster === this.state.currentCompany.cluster
         );
