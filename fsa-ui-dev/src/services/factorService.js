@@ -1,5 +1,5 @@
-export async function fetchCompanies() {
-    const response = await fetch("/2018_Clusters_Ratios_AF_All.json", {
+export async function fetchFactors() {
+    const response = await fetch("/2018_Clusters_All_Factors.json", {
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",

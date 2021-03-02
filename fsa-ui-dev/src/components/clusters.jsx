@@ -11,14 +11,14 @@ class Clusters extends Component {
         companies: [],
         itemsCount: 0,
         currentPage: 1,
-        pageSize: 12,
+        pageSize: 100,
     };
 
     componentDidMount() {
-        this.getFakeCompanies();
+        this.getCompanies();
     }
 
-    async getFakeCompanies() {
+    async getCompanies() {
         const companies = await fetchCompanies();
         this.setState({ itemsCount: companies.length, companies: companies });
         this.getSortedData();

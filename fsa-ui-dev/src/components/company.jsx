@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import { fetchCompanies } from "../services/companyService";
+import { fetchFactors } from "../services/factorService";
 
 import CompanyTable from "./common/companyTable";
 import Pagination from "./common/pagination";
@@ -12,6 +13,7 @@ class Company extends Component {
     state = {
         currentCompany: {},
         similarCompanies: [],
+        factors: [],
         itemsCount: 0,
         currentPage: 1,
         pageSize: 10,
@@ -33,6 +35,13 @@ class Company extends Component {
             (c) => c.ticker === this.props.match.params.ticker
         );
         this.setState({ currentCompany });
+
+        await this.getFactors(currentCompany.cluster);
+    }
+
+    async getFactors(cluster) {
+        let factors = await fetchFactors();
+        this.setState({ factors: factors[cluster] });
     }
 
     async getSimilarCompanies() {
@@ -70,7 +79,13 @@ class Company extends Component {
 
     render() {
         let ticker = this.props.match.params.ticker;
-        let { currentCompany, itemsCount, currentPage, pageSize } = this.state;
+        let {
+            currentCompany,
+            itemsCount,
+            currentPage,
+            pageSize,
+            factors,
+        } = this.state;
         return (
             <React.Fragment>
                 <h1>
@@ -82,8 +97,9 @@ class Company extends Component {
                             <h4>Current Cluster: {currentCompany.cluster}</h4>
                             <h5>Cluster Characteristics:</h5>
                             <ul>
-                                <li>High Profit/Earnings Ratio</li>
-                                <li>High Revenue</li>
+                                {factors.map((factor) => (
+                                    <li key={factor}>{factor}</li>
+                                ))}
                             </ul>
                         </Col>
                         <Col>
