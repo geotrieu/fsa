@@ -23,7 +23,7 @@ class TitleBar extends Component {
                         <Nav.Link as={Link} to="/clusters">
                             Company Clusters
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/about">
+                        <Nav.Link as={Link} to="/aboutus">
                             About Us
                         </Nav.Link>
                     </Nav>
@@ -32,6 +32,10 @@ class TitleBar extends Component {
                             type="text"
                             placeholder="Search"
                             className="mr-sm-2"
+                            value={this.props.searchTerm}
+                            onChange={(e) =>
+                                this.props.onChange(e.currentTarget.value)
+                            }
                         />
                         <Button variant="outline-success">Search</Button>
                     </Form>

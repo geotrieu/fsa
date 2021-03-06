@@ -7,16 +7,38 @@ import TitleBar from "./components/titleBar";
 import Clusters from "./components/clusters";
 import Company from "./components/company";
 import Home from "./components/home";
+import AboutUs from "./components/aboutUs";
+import { useState } from "react";
 
 function App() {
+    const [searchTerm, setSearchTerm] = useState("");
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const handleSearch = (term) => {
+        console.log(term);
+        setSearchTerm(term);
+        setCurrentPage(1);
+    };
+
     return (
         <Router>
             <div className="App">
-                <TitleBar />
+                <TitleBar searchTerm={searchTerm} onChange={handleSearch} />
                 <div className="mainContent my-5">
                     <Switch>
                         <Route path="/company/:ticker" component={Company} />
-                        <Route path="/clusters" component={Clusters} />
+                        <Route
+                            path="/clusters"
+                            render={(props) => (
+                                <Clusters
+                                    {...props}
+                                    currentPage={currentPage}
+                                    searchTerm={searchTerm}
+                                    setCurrentPage={setCurrentPage}
+                                />
+                            )}
+                        />
+                        <Route path="/aboutus" component={AboutUs} />
                         <Route path="/" component={Home} />
                     </Switch>
                 </div>

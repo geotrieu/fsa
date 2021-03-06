@@ -10,8 +10,8 @@ class Clusters extends Component {
     state = {
         companies: [],
         itemsCount: 0,
-        currentPage: 1,
-        pageSize: 100,
+        pageSize: 15,
+        maxPagesShow: 10,
     };
 
     componentDidMount() {
@@ -25,10 +25,18 @@ class Clusters extends Component {
     }
 
     getSortedData = () => {
-        const sorted = _.orderBy(this.state.companies, ["ticker"], "asc");
+        if (!this.state.companies) return;
+        const filtered = this.state.companies.filter(
+            (item) =>
+                item.name
+                    .toUpperCase()
+                    .startsWith(this.props.searchTerm.toUpperCase()) ||
+                item.ticker.startsWith(this.props.searchTerm.toUpperCase())
+        );
+        const sorted = _.orderBy(filtered, ["ticker"], "asc");
         const paginated = paginate(
             sorted,
-            this.state.currentPage,
+            this.props.currentPage,
             this.state.pageSize
         );
         return paginated;
@@ -39,11 +47,13 @@ class Clusters extends Component {
     };
 
     handlePageChange = (page) => {
-        this.setState({ currentPage: page });
+        if (page.toString().trim() === "...") return;
+        this.props.setCurrentPage(page);
     };
 
     render() {
-        let { itemsCount, currentPage, pageSize } = this.state;
+        let { itemsCount, pageSize, maxPagesShow } = this.state;
+        let { currentPage } = this.props;
         return (
             <React.Fragment>
                 <CompanyTable
@@ -55,6 +65,7 @@ class Clusters extends Component {
                     itemsCount={itemsCount}
                     currentPage={currentPage}
                     pageSize={pageSize}
+                    maxPagesShow={maxPagesShow}
                 />
             </React.Fragment>
         );

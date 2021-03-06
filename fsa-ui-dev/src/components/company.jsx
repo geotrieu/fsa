@@ -11,18 +11,17 @@ import { paginate } from "../utils/paginate";
 
 class Company extends Component {
     state = {
-        currentCompany: {},
+        companies: [],
+        ticker: "XXXX",
+        name: "XXXXXXX",
+        cluster: -1,
         similarCompanies: [],
         factors: [],
         itemsCount: 0,
         currentPage: 1,
         pageSize: 10,
+        maxPagesShow: 5,
     };
-
-    componentDidUpdate() {
-        this.getCurrentCompany();
-        this.getSimilarCompanies();
-    }
 
     componentDidMount() {
         this.getCurrentCompany();
@@ -30,11 +29,23 @@ class Company extends Component {
     }
 
     async getCurrentCompany() {
-        let companies = await fetchCompanies();
-        let currentCompany = companies.find(
-            (c) => c.ticker === this.props.match.params.ticker
+        if (this.state.companies.length === 0) {
+            let companies = await fetchCompanies();
+            this.setState({ companies });
+        }
+
+        await this.getName(this.props.match.params.ticker);
+    }
+
+    async getName(ticker) {
+        let currentCompany = this.state.companies.find(
+            (c) => c.ticker === ticker
         );
-        this.setState({ currentCompany });
+        this.setState({
+            ticker: ticker,
+            name: currentCompany.name,
+            cluster: currentCompany.cluster,
+        });
 
         await this.getFactors(currentCompany.cluster);
     }
@@ -45,9 +56,12 @@ class Company extends Component {
     }
 
     async getSimilarCompanies() {
-        let companies = await fetchCompanies();
-        companies = companies.filter(
-            (c) => c.cluster === this.state.currentCompany.cluster
+        if (this.state.companies.length === 0) {
+            let companies = await fetchCompanies();
+            this.setState({ companies });
+        }
+        let companies = this.state.companies.filter(
+            (c) => c.cluster === this.state.cluster
         );
         this.setState({
             itemsCount: companies.length,
@@ -70,31 +84,35 @@ class Company extends Component {
     };
 
     handleCompanyClick = (ticker) => {
+        this.getName(ticker);
         this.props.history.push("/company/" + ticker);
     };
 
     handlePageChange = (page) => {
+        if (page.toString().trim() === "...") return;
         this.setState({ currentPage: page });
     };
 
     render() {
         let ticker = this.props.match.params.ticker;
         let {
-            currentCompany,
+            name,
+            cluster,
             itemsCount,
             currentPage,
             pageSize,
             factors,
+            maxPagesShow,
         } = this.state;
         return (
             <React.Fragment>
                 <h1>
-                    {ticker}: {currentCompany.name}
+                    {ticker}: {name}
                 </h1>
                 <Container>
                     <Row>
                         <Col>
-                            <h4>Current Cluster: {currentCompany.cluster}</h4>
+                            <h4>Current Cluster: {cluster}</h4>
                             <h5>Cluster Characteristics:</h5>
                             <ul>
                                 {factors.map((factor) => (
@@ -114,6 +132,7 @@ class Company extends Component {
                                 itemsCount={itemsCount}
                                 currentPage={currentPage}
                                 pageSize={pageSize}
+                                maxPagesShow={maxPagesShow}
                             />
                         </Col>
                     </Row>

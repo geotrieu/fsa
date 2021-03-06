@@ -2,10 +2,30 @@ import _ from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
+const Pagination = ({
+    itemsCount,
+    pageSize,
+    currentPage,
+    onPageChange,
+    maxPagesShow,
+}) => {
     const pagesCount = Math.ceil(itemsCount / pageSize);
     if (pagesCount === 1) return null;
-    const pages = _.range(1, pagesCount + 1);
+    const pages = _.range(
+        Math.max(1, currentPage - maxPagesShow),
+        Math.min(pagesCount + 1, currentPage + maxPagesShow)
+    );
+
+    if (
+        Math.min(pagesCount + 1, currentPage + maxPagesShow) !=
+        pagesCount + 1
+    ) {
+        pages.push("...");
+    }
+
+    if (Math.max(1, currentPage - maxPagesShow) != 1) {
+        pages.unshift(" ...");
+    }
 
     return (
         <nav>
