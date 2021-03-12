@@ -106,19 +106,45 @@ class Company extends Component {
         } = this.state;
         return (
             <React.Fragment>
-                <h1>
-                    {ticker}: {name}
-                </h1>
                 <Container>
+                    <Row className="companyTitle">
+                        <Col>
+                            <span className="companyName">{name}</span>
+                        </Col>
+                        <Col>
+                            <span className="companyTicker">{ticker}</span>
+                        </Col>
+                    </Row>
                     <Row>
                         <Col>
-                            <h4>Current Cluster: {cluster}</h4>
-                            <h5>Cluster Characteristics:</h5>
-                            <ul>
-                                {factors.map((factor) => (
-                                    <li key={factor}>{factor}</li>
-                                ))}
-                            </ul>
+                            <h4 className="inCluster">
+                                In Cluster{" "}
+                                <span
+                                    className="badge rounded-pill bg-primary"
+                                    key={cluster}
+                                >
+                                    {cluster}
+                                </span>
+                            </h4>
+                            <h5>
+                                Cluster Characteristics{" "}
+                                <span
+                                    className="badge rounded-pill bg-warning"
+                                    key={cluster + "_charlength"}
+                                >
+                                    {factors.length}
+                                </span>
+                            </h5>
+                            {factors.map((factor) => (
+                                <div className="factorDiv">
+                                    <span
+                                        className="badge rounded-pill bg-success"
+                                        key={factor}
+                                    >
+                                        {factor}
+                                    </span>
+                                </div>
+                            ))}
                         </Col>
                         <Col>
                             <h4>Similar Companies</h4>

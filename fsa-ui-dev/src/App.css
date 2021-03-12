@@ -57,3 +57,38 @@
 .profileImage {
     clip-path: circle(125px at center);
 }
+
+.factorDiv {
+    margin-bottom: 10px;
+}
+
+.factorDiv span {
+    padding: 10px;
+}
+
+.factorDiv .badge {
+    color: white;
+}
+
+.companyTitle {
+    font-weight: bold;
+    font-size: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 20px;
+}
+
+.companyName {
+}
+
+.companyTicker {
+    float: right;
+}
+
+.inCluster {
+    margin-bottom: 20px;
+}
+
+.inCluster .badge {
+    color: white;
+}

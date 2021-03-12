@@ -46,8 +46,11 @@ const AboutUs = () => {
             <h1 style={{ marginBottom: "25px" }}>About Us</h1>
             <Row className="justify-content-md-center">
                 {profiles.map((profile) => (
-                    <Col sm={2}>
-                        <Profile data={profile} />
+                    <Col key={profile.name + "_col"} sm={2}>
+                        <Profile
+                            key={profile.name + "_profile"}
+                            data={profile}
+                        />
                     </Col>
                 ))}
             </Row>
