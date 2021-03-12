@@ -42,6 +42,18 @@
     margin-right: 100px;
 }
 
+.title {
+    margin-bottom: 50px;
+}
+
+.homeButtonsDiv {
+    position: absolute;
+    margin-top: 50px;
+}
+.homeButtons {
+    margin-bottom: 30px;
+}
+
 .profileImage {
     clip-path: circle(125px at center);
 }

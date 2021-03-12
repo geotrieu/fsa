@@ -13,7 +13,7 @@ class TitleBar extends Component {
     render() {
         return (
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="#home">QMIND FSA</Navbar.Brand>
+                <Navbar.Brand>QMIND FSA</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
