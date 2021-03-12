@@ -26,14 +26,14 @@ const AboutUs = () => {
             faculty: "Smith School of Business",
         },
         {
-            img: "/raisa.JPG",
+            img: "/raisa.jpg",
             name: "Raisa Sayed",
             program: "4th Year Commerce Student",
             organization: "Queen's University",
             faculty: "Smith School of Business",
         },
         {
-            img: "/nicolas.JPG",
+            img: "/nicolas.jpg",
             name: "Nicolas Wills",
             program: "3rd Year Computer Engineering Student",
             organization: "Queen's University",
