@@ -15,7 +15,9 @@ const Home = ({ history }) => {
         window.open("https://github.com/geotrieu/fsa");
     }
 
-    function handleReportClick() {}
+    function handleReportClick() {
+        window.alert("Comming Soon!");
+    }
 
     return (
         <div>
@@ -124,7 +126,7 @@ const Home = ({ history }) => {
                             variant="outline-info"
                             onClick={handleReportClick}
                         >
-                            Checkout our Research Report
+                            Checkout the Research Report
                         </Button>
                     </div>
                 </Col>
