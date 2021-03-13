@@ -48,14 +48,14 @@ const Home = ({ history }) => {
                     <h5>How to use our Tool:</h5>
                     <p style={{ textAlign: "left" }}>
                         On the <Link to="/clusters">clusters</Link> page, each
-                        company will be listed along with their cluster number.
-                        By clicking on each different company, you'll be able to
+                        company is listed along with their cluster number. By
+                        clicking on each different company, you'll be able to
                         see other similar companies that are in the same
                         cluster, along with some of the characteristics that
-                        were used to form those clusters. You may also search
-                        for companies using their ticker symbol or their name,
-                        using the Search Box located on the top-right of the
-                        page.
+                        were used to form those clusters. A copy of the shapley
+                        values plot is also included. You may also search for
+                        companies using their ticker symbol or their name, using
+                        the Search Box located on the top-right of the page.
                     </p>
                     <h5>How the Model Works:</h5>
                     <p style={{ textAlign: "left" }}>
@@ -87,12 +87,18 @@ const Home = ({ history }) => {
                         The summary of the top factors impacting all clusters
                         can be found below (analyzed using Shapley Values):
                         <br />
-                        <img src="/shap_plots/shapley_all.png"></img>
+                        <img
+                            src="/shap_plots/shapley_all.png"
+                            alt="Shapley Values Plot for All Clusters"
+                        ></img>
                         <br />
                         An example of a more specific clustering can be seen
                         below, where the top factors for cluster 0 is shown:
                         <br />
-                        <img src="/shap_plots/shapley_0.png"></img>
+                        <img
+                            src="/shap_plots/shapcluster0.png"
+                            alt="Shapley Values Plot for Cluster 0"
+                        ></img>
                         <br />
                         Here, you can see that the cluster tends to have high
                         Average Receivables, and high Average Payables ratios.

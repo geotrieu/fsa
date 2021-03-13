@@ -160,11 +160,7 @@ class Company extends Component {
                                                 icon={faArrowDown}
                                             />
                                         )}
-                                        {" " +
-                                            factor[1] +
-                                            " " +
-                                            factor[0] +
-                                            " Ratio"}
+                                        {" " + factor[1] + " " + factor[0]}
                                     </span>
                                 </div>
                             ))}
