@@ -1,5 +1,5 @@
 export async function fetchFakeCompanies() {
-    const response = await fetch("/mockCompanies.json", {
+    const response = await fetch("/datasets/mockCompanies.json", {
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",

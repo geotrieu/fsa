@@ -87,12 +87,12 @@ const Home = ({ history }) => {
                         The summary of the top factors impacting all clusters
                         can be found below (analyzed using Shapley Values):
                         <br />
-                        <img src="/shapley_all.png"></img>
+                        <img src="/shap_plots/shapley_all.png"></img>
                         <br />
                         An example of a more specific clustering can be seen
                         below, where the top factors for cluster 0 is shown:
                         <br />
-                        <img src="/shapley_0.png"></img>
+                        <img src="/shap_plots/shapley_0.png"></img>
                         <br />
                         Here, you can see that the cluster tends to have high
                         Average Receivables, and high Average Payables ratios.

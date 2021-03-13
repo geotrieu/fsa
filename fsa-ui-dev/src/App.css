@@ -1,5 +1,12 @@
+html,
+body {
+    height: 100vh;
+}
+
 .App {
+    position: relative;
     text-align: center;
+    min-height: 100vh;
 }
 
 .App-logo {
@@ -40,6 +47,9 @@
 .mainContent {
     margin-left: 100px;
     margin-right: 100px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .title {
@@ -113,4 +123,12 @@
 
 .inCluster .badge {
     color: white;
+}
+
+.footer {
+    background-color: lightgrey;
+    padding: 5px 0px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }

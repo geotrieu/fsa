@@ -5,35 +5,35 @@ import Profile from "./common/profile";
 const AboutUs = () => {
     const profiles = [
         {
-            img: "/george.JPG",
+            img: "/profiles/george.JPG",
             name: "George Trieu",
             program: "2nd Year Computer Engineering Student",
             organization: "Queen's University",
             faculty: "Faculty of Engineering and Applied Science",
         },
         {
-            img: "/jackson.JPG",
+            img: "/profiles/jackson.JPG",
             name: "Jackson Kehoe",
             program: "3rd Year Computer Engineering Student",
             organization: "Queen's University",
             faculty: "Faculty of Engineering and Applied Science",
         },
         {
-            img: "/alexia.JPG",
+            img: "/profiles/alexia.JPG",
             name: "Alexia Tecsa",
             program: "3rd Year Commerce Student",
             organization: "Queen's University",
             faculty: "Smith School of Business",
         },
         {
-            img: "/raisa.jpg",
+            img: "/profiles/raisa.jpg",
             name: "Raisa Sayed",
             program: "4th Year Commerce Student",
             organization: "Queen's University",
             faculty: "Smith School of Business",
         },
         {
-            img: "/nicolas.jpg",
+            img: "/profiles/nicolas.jpg",
             name: "Nicolas Wills",
             program: "3rd Year Computer Engineering Student",
             organization: "Queen's University",
