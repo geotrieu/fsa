@@ -170,6 +170,7 @@ class Company extends Component {
                                     "/shap_plots/shapcluster" + cluster + ".png"
                                 }
                                 alt="Shapley Value Plot"
+                                style={{ maxWidth: "100%" }}
                             ></img>
                         </Col>
                         <Col>

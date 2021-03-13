@@ -90,6 +90,7 @@ const Home = ({ history }) => {
                         <img
                             src="/shap_plots/shapley_all.png"
                             alt="Shapley Values Plot for All Clusters"
+                            style={{ maxWidth: "100%" }}
                         ></img>
                         <br />
                         An example of a more specific clustering can be seen
@@ -98,6 +99,7 @@ const Home = ({ history }) => {
                         <img
                             src="/shap_plots/shapcluster0.png"
                             alt="Shapley Values Plot for Cluster 0"
+                            style={{ maxWidth: "100%" }}
                         ></img>
                         <br />
                         Here, you can see that the cluster tends to have high
