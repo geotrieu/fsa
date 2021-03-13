@@ -8,6 +8,8 @@ import { fetchFactors } from "../services/factorService";
 import CompanyTable from "./common/companyTable";
 import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 class Company extends Component {
     state = {
@@ -83,6 +85,11 @@ class Company extends Component {
         return paginated;
     };
 
+    getFactorClassName = (status) => {
+        if (status === "High") return "badge rounded-pill bg-success";
+        return "badge rounded-pill bg-danger";
+    };
+
     handleCompanyClick = (ticker) => {
         this.getName(ticker);
         this.props.history.push("/company/" + ticker);
@@ -137,14 +144,27 @@ class Company extends Component {
                             </h5>
                             {factors.map((factor) => (
                                 <div
-                                    key={factor + "_div"}
+                                    key={factor[0] + "_div"}
                                     className="factorDiv"
                                 >
                                     <span
-                                        className="badge rounded-pill bg-success"
-                                        key={factor}
+                                        className={this.getFactorClassName(
+                                            factor[1]
+                                        )}
+                                        key={factor[0]}
                                     >
-                                        {factor}
+                                        {factor[1] === "High" ? (
+                                            <FontAwesomeIcon icon={faArrowUp} />
+                                        ) : (
+                                            <FontAwesomeIcon
+                                                icon={faArrowDown}
+                                            />
+                                        )}
+                                        {" " +
+                                            factor[1] +
+                                            " " +
+                                            factor[0] +
+                                            " Ratio"}
                                     </span>
                                 </div>
                             ))}
