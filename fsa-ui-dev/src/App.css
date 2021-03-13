@@ -90,6 +90,23 @@
     float: right;
 }
 
+.companyTableProperties {
+    color: white;
+}
+
+.companyTableProperties span {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.companyTableProperties .companyCount {
+    float: left;
+}
+
+.companyTableProperties .searchTerm {
+    float: right;
+}
+
 .inCluster {
     margin-bottom: 20px;
 }

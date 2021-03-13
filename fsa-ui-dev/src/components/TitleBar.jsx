@@ -29,7 +29,7 @@ const TitleBar = ({ searchTerm, onChange }) => {
                 <Form onSubmit={handleSearchClick} inline>
                     <FormControl
                         type="text"
-                        placeholder="Search"
+                        placeholder="Search Companies"
                         className="mr-sm-2"
                         value={searchTerm}
                         onChange={(e) => onChange(e.currentTarget.value)}

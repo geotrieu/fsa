@@ -51,11 +51,23 @@ class Clusters extends Component {
 
     render() {
         let { pageSize, maxPagesShow } = this.state;
-        let { currentPage } = this.props;
+        let { currentPage, searchTerm } = this.props;
 
         const { count: itemsCount, data: pageCompanies } = this.getSortedData();
         return (
             <React.Fragment>
+                <div className="companyTableProperties">
+                    <span className="companyCount badge rounded-pill bg-primary">
+                        {itemsCount + " Companies Found"}
+                    </span>
+                    {searchTerm ? (
+                        <span className="searchTerm badge rounded-pill bg-success">
+                            {"Search Term: " + searchTerm}
+                        </span>
+                    ) : (
+                        ""
+                    )}
+                </div>
                 <CompanyTable
                     companies={pageCompanies}
                     onClick={this.handleCompanyClick}
