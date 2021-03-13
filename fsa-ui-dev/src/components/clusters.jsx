@@ -9,8 +9,7 @@ import { paginate } from "../utils/paginate";
 class Clusters extends Component {
     state = {
         companies: [],
-        itemsCount: 0,
-        pageSize: 15,
+        pageSize: 13,
         maxPagesShow: 10,
     };
 
@@ -20,8 +19,7 @@ class Clusters extends Component {
 
     async getCompanies() {
         const companies = await fetchCompanies();
-        this.setState({ itemsCount: companies.length, companies: companies });
-        this.getSortedData();
+        this.setState({ companies: companies });
     }
 
     getSortedData = () => {
@@ -39,7 +37,7 @@ class Clusters extends Component {
             this.props.currentPage,
             this.state.pageSize
         );
-        return paginated;
+        return { count: sorted.length, data: paginated };
     };
 
     handleCompanyClick = (ticker) => {
@@ -52,12 +50,14 @@ class Clusters extends Component {
     };
 
     render() {
-        let { itemsCount, pageSize, maxPagesShow } = this.state;
+        let { pageSize, maxPagesShow } = this.state;
         let { currentPage } = this.props;
+
+        const { count: itemsCount, data: pageCompanies } = this.getSortedData();
         return (
             <React.Fragment>
                 <CompanyTable
-                    companies={this.getSortedData()}
+                    companies={pageCompanies}
                     onClick={this.handleCompanyClick}
                 />
                 <Pagination

@@ -3,7 +3,12 @@ import React from "react";
 const Profile = ({ data }) => {
     return (
         <div>
-            <img className="profileImage" width="250px" src={data.img}></img>
+            <img
+                className="profileImage"
+                alt={data.name}
+                width="100%"
+                src={data.img}
+            ></img>
             <p>
                 <br />
                 <b>{data.name}</b>

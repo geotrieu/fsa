@@ -45,6 +45,16 @@ const AboutUs = () => {
         <div>
             <h1 style={{ marginBottom: "25px" }}>About Us</h1>
             <Row className="justify-content-md-center">
+                <h6 className="aboutUsIntro">
+                    This projected was developed in 2020-2021 by Queen's
+                    University QMIND's FSA team.
+                    <br />
+                    Director of Design: Willem Atack (not pictured)
+                    <br />
+                    Team Lead: George Trieu
+                </h6>
+            </Row>
+            <Row className="justify-content-md-center">
                 {profiles.map((profile) => (
                     <Col key={profile.name + "_col"} sm={2}>
                         <Profile

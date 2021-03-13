@@ -20,7 +20,7 @@ class Company extends Component {
         itemsCount: 0,
         currentPage: 1,
         pageSize: 10,
-        maxPagesShow: 5,
+        maxPagesShow: 3,
     };
 
     componentDidMount() {
@@ -136,7 +136,10 @@ class Company extends Component {
                                 </span>
                             </h5>
                             {factors.map((factor) => (
-                                <div className="factorDiv">
+                                <div
+                                    key={factor + "_div"}
+                                    className="factorDiv"
+                                >
                                     <span
                                         className="badge rounded-pill bg-success"
                                         key={factor}
@@ -145,6 +148,13 @@ class Company extends Component {
                                     </span>
                                 </div>
                             ))}
+                            <h5>Shapley Values Plot for Cluster {cluster}</h5>
+                            <img
+                                src={
+                                    "/shap_plots/shapcluster" + cluster + ".png"
+                                }
+                                alt="Shapley Value Plot"
+                            ></img>
                         </Col>
                         <Col>
                             <h4>Similar Companies</h4>

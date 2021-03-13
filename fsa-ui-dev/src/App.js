@@ -10,12 +10,11 @@ import Home from "./components/home";
 import AboutUs from "./components/aboutUs";
 import { useState } from "react";
 
-function App() {
+function App({ history }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
 
-    const handleSearch = (term) => {
-        console.log(term);
+    const handleSearchChange = (term) => {
         setSearchTerm(term);
         setCurrentPage(1);
     };
@@ -23,7 +22,10 @@ function App() {
     return (
         <Router>
             <div className="App">
-                <TitleBar searchTerm={searchTerm} onChange={handleSearch} />
+                <TitleBar
+                    searchTerm={searchTerm}
+                    onChange={handleSearchChange}
+                />
                 <div className="mainContent my-5">
                     <Switch>
                         <Route path="/company/:ticker" component={Company} />

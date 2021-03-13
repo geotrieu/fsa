@@ -54,8 +54,12 @@
     margin-bottom: 30px;
 }
 
+.aboutUsIntro {
+    margin-bottom: 20px;
+}
+
 .profileImage {
-    clip-path: circle(125px at center);
+    clip-path: circle(50%);
 }
 
 .factorDiv {
@@ -79,6 +83,7 @@
 }
 
 .companyName {
+    float: left;
 }
 
 .companyTicker {
