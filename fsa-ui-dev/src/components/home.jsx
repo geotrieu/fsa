@@ -21,10 +21,12 @@ const Home = ({ history }) => {
 
     return (
         <div>
-            <h1 className="title">
-                Quantitative Financial Statement Analysis Using Unsupervised
-                Learning
-            </h1>
+            <Row className="justify-content-md-center">
+                <h1 className="title">
+                    Quantitative Financial Statement Analysis Using Unsupervised
+                    Learning
+                </h1>
+            </Row>
             <Row className="justify-content-md-center">
                 <Col sm={6}>
                     <h5>What is this?</h5>

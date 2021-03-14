@@ -30,11 +30,12 @@ const TitleBar = ({ searchTerm, onChange }) => {
                     <FormControl
                         type="text"
                         placeholder="Search Companies"
-                        className="mr-sm-2"
+                        className="mr-2 w-auto"
                         value={searchTerm}
                         onChange={(e) => onChange(e.currentTarget.value)}
                     />
                     <Button
+                        className="w-25"
                         onClick={handleSearchClick}
                         variant="outline-success"
                     >

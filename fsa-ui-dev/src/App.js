@@ -27,7 +27,7 @@ function App({ history }) {
                     searchTerm={searchTerm}
                     onChange={handleSearchChange}
                 />
-                <div className="mainContent">
+                <div className="mx-5 mt-4 pb-4 mainContent">
                     <Switch>
                         <Route path="/company/:ticker" component={Company} />
                         <Route

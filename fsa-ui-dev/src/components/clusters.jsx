@@ -5,12 +5,15 @@ import { fetchCompanies } from "../services/companyService";
 import CompanyTable from "./common/companyTable";
 import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
+import DownloadFile from "./common/downloadFile";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { Col, Row } from "react-bootstrap";
 
 class Clusters extends Component {
     state = {
         companies: [],
         pageSize: 13,
-        maxPagesShow: 10,
+        maxPagesShow: 3,
     };
 
     componentDidMount() {
@@ -72,13 +75,26 @@ class Clusters extends Component {
                     companies={pageCompanies}
                     onClick={this.handleCompanyClick}
                 />
-                <Pagination
-                    onPageChange={this.handlePageChange}
-                    itemsCount={itemsCount}
-                    currentPage={currentPage}
-                    pageSize={pageSize}
-                    maxPagesShow={maxPagesShow}
-                />
+                <Row>
+                    <Col className="mr-auto">
+                        <Pagination
+                            onPageChange={this.handlePageChange}
+                            itemsCount={itemsCount}
+                            currentPage={currentPage}
+                            pageSize={pageSize}
+                            maxPagesShow={maxPagesShow}
+                        />
+                    </Col>
+                    <Col>
+                        <DownloadFile
+                            icon={faDownload}
+                            className="float-right"
+                            variant="outline-info"
+                            text="Download CSV"
+                            link="/datasets/2018_Clusters_Ratios_AF_All.json"
+                        />
+                    </Col>
+                </Row>
             </React.Fragment>
         );
     }
