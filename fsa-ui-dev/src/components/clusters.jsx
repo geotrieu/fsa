@@ -91,7 +91,7 @@ class Clusters extends Component {
                             className="float-right"
                             variant="outline-info"
                             text="Download CSV"
-                            link="/datasets/2018_Clusters_Ratios_AF_All.json"
+                            link="/datasets/2018_Clusters_Ratios_AF_All.csv"
                         />
                     </Col>
                 </Row>
