@@ -4,7 +4,11 @@ import { Table } from "react-bootstrap";
 const CompanyTable = ({ companies, onClick, exclude = {} }) => {
     let renderCompany = (company) => {
         return (
-            <tr key={company.ticker} onClick={() => onClick(company.ticker)}>
+            <tr
+                style={{ cursor: "pointer" }}
+                key={company.ticker}
+                onClick={() => onClick(company.ticker)}
+            >
                 {!exclude.cluster && (
                     <td key={company.ticker + ".cluster"}>{company.cluster}</td>
                 )}
