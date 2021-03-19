@@ -45,7 +45,8 @@ body {
 }
 
 .title {
-    margin-bottom: 50px;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 30px;
 }
 
 .homeButtonsDiv {

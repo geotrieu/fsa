@@ -16,20 +16,26 @@ const Home = ({ history }) => {
     }
 
     function handleReportClick() {
-        window.alert("Comming Soon!");
+        window.open("./CUCAI_FSA.pdf");
     }
 
     return (
         <div>
             <Row className="justify-content-md-center">
-                <h1 className="title">
-                    Quantitative Financial Statement Analysis Using Unsupervised
-                    Learning
-                </h1>
+                <div className="title">
+                    <h1>
+                        Quantitative Financial Statement Analysis Using
+                        Unsupervised Learning
+                    </h1>
+                    <h6>
+                        Categorizes companies into clusters using unsupervised
+                        learning
+                    </h6>
+                </div>
             </Row>
             <Row className="justify-content-md-center">
                 <Col sm={6}>
-                    <h5>What is this?</h5>
+                    <h5>Background</h5>
                     <p style={{ textAlign: "left" }}>
                         In the role of a business or investment analyst,
                         financial statements are relied on heavily as they are
@@ -38,7 +44,9 @@ const Home = ({ history }) => {
                         investment. Over recent years, different supervised
                         machine learning models have been applied to help gain
                         insights from the large number of datasets available.
-                        <br />
+                    </p>
+                    <h5>Problem and Objectives</h5>
+                    <p style={{ textAlign: "left" }}>
                         The problem that is being explored in this project is
                         how to help classify and separate different companies in
                         various industries based on the financial information

@@ -15,8 +15,6 @@ const Profile = ({ data }) => {
                 <br />
                 {data.program}
                 <br />
-                {data.organization}
-                <br />
                 {data.faculty}
             </p>
         </div>
