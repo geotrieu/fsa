@@ -22,16 +22,16 @@ const Home = ({ history }) => {
     return (
         <div>
             <Row className="justify-content-md-center">
-                <div className="title">
-                    <h1>
-                        Quantitative Financial Statement Analysis Using
-                        Unsupervised Learning
-                    </h1>
-                    <h6>
-                        Categorizes companies into clusters using unsupervised
-                        learning
-                    </h6>
-                </div>
+                <Col sm={6}>
+                    <div className="title">
+                        <h1>Quantitative Financial Statement Analysis</h1>
+                        <h6>
+                            Categorizes companies into clusters using
+                            unsupervised learning
+                        </h6>
+                    </div>
+                </Col>
+                <Col sm={2}></Col>
             </Row>
             <Row className="justify-content-md-center">
                 <Col sm={6}>
@@ -84,6 +84,7 @@ const Home = ({ history }) => {
                         However, clustering using Affinity Propagation and
                         Gaussian Mixture allowed for clear distinct clusters to
                         form.
+                        <br />
                         <br />
                         <u>
                             This final model uses Affinity Propagation
