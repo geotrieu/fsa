@@ -5,6 +5,8 @@ The problem that is being explored in this project is how to help classify and s
 
 ### Application
 
+A live version of the page can be found here: https://qmind-fsa.herokuapp.com.
+
 On the clusters page, each company is listed along with their cluster number.
 <img src="https://i.imgur.com/ZuLyun0.png">
 By clicking on each different company, you'll be able to see other similar companies that are in the same cluster, along with some of the characteristics that were used to form those clusters. A copy of the shapley values plot is also included.
