@@ -5,7 +5,7 @@ import Profile from "./common/profile";
 const AboutUs = () => {
     const profiles = [
         {
-            img: "/profiles/george.jpg",
+            img: "/profiles/george.JPG",
             name: "George Trieu",
             program: "Computer Engineering @ Queen's",
             organization: "Queen's University",
