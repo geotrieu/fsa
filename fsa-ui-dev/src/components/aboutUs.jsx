@@ -5,7 +5,7 @@ import Profile from "./common/profile";
 const AboutUs = () => {
     const profiles = [
         {
-            img: "/profiles/george.JPG",
+            img: "/profiles/george.jpg",
             name: "George Trieu",
             program: "Computer Engineering @ Queen's",
             organization: "Queen's University",
@@ -46,7 +46,7 @@ const AboutUs = () => {
             <h1 style={{ marginBottom: "25px" }}>About Us</h1>
             <Row className="justify-content-md-center">
                 <h6 className="aboutUsIntro">
-                    This projected was developed in 2020-2021 by Queen's
+                    This project was developed in 2020-2021 by Queen's
                     University QMIND's FSA team.
                     <br />
                     Director of Design: Willem Atack (not pictured)
