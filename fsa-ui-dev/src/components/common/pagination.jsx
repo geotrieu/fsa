@@ -17,13 +17,13 @@ const Pagination = ({
     );
 
     if (
-        Math.min(pagesCount + 1, currentPage + maxPagesShow) !=
+        Math.min(pagesCount + 1, currentPage + maxPagesShow) !==
         pagesCount + 1
     ) {
         pages.push("...");
     }
 
-    if (Math.max(1, currentPage - maxPagesShow) != 1) {
+    if (Math.max(1, currentPage - maxPagesShow) !== 1) {
         pages.unshift(" ...");
     }
 
@@ -40,6 +40,7 @@ const Pagination = ({
                         }
                     >
                         <a
+                            href="#"
                             className="page-link"
                             onClick={() => onPageChange(page)}
                         >
