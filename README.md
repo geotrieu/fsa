@@ -5,7 +5,7 @@ The problem that is being explored in this project is how to help classify and s
 
 ### Application
 
-A live version of the page can be found here: https://qmind-fsa.herokuapp.com.
+A live version of the page can be found here: https://qmind-fsa.netlify.app/
 
 On the clusters page, each company is listed along with their cluster number.
 <img src="https://i.imgur.com/ZuLyun0.png">
