@@ -1,5 +1,7 @@
 # Financial Statement Analysis
 
+<img src="https://i.imgur.com/D86dur5.png">
+
 In the role of a business or investment analyst, financial statements are relied on heavily as they are key factors when determining the overall success of a company and if an investment will provide a return on investment. Over recent years, different supervised machine learning models have been applied to help gain insights from the large number of datasets available.  
 The problem that is being explored in this project is how to help classify and separate different companies in various industries based on the financial information provided in 10K filings. The objective is to separate companies from various industries into different clusters and identify the key attributes in each cluster to explore any similarities between companies.
 
